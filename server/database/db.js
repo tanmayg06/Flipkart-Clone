@@ -4,10 +4,9 @@ import mongoose from 'mongoose';
 
 export const Connection =async (username , password) => {
 
-    // const encodedUsername = encodeURIComponent(username);
-    // const encodedPassword = encodeURIComponent(password);
+    
 
-    const URL = 'mongodb+srv://tanmaygoyaljpr111:microsoft9.@cluster0.r2dsv0w.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+    const URL = `mongodb+srv://${username}:${password}@cluster0.r2dsv0w.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
     try{
        await mongoose.connect( URL , { useUnifiedTopology: true, useNewUrlParser: true });
